@@ -91,24 +91,24 @@ extension CardCell {
                 self?.networkSpinner.stopAnimating()
             }
             
-            if let  urlSessionError = urlSessionError {
-                print("\nimage-error-for-\(card.suit ?? "")-: ",  urlSessionError)
+            if let urlSessionError = urlSessionError {
+                print("\nimage-error-for-\(card.suit ?? ""): ",  urlSessionError)
             }
         }
     }
     
     private func setSuitLabel(for card: Card) {
         
-        let cardName = card.suit ?? "Suit Unavailable"
+        let cardSuit = card.suit ?? "Suit Unavailable"
         
-        suitLabel.text = cardName.capitalized
+        suitLabel.text = cardSuit.capitalized
     }
     
     private func setValueLabel(for card: Card) {
         
-        let cardName = card.value ?? "Value Unavailable"
+        let cardValue = card.value ?? "Value Unavailable"
         
-        valueLabel.text = cardName.capitalized
+        valueLabel.text = cardValue.capitalized
     }
 }
 
