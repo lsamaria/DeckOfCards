@@ -16,7 +16,7 @@ enum URLSessionError: Error {
 
 final class NetworkManager {
     
-    let shared = NetworkManager()
+    static let shared = NetworkManager()
     
     private init() { }
 }
