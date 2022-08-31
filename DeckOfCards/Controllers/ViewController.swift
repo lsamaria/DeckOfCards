@@ -151,6 +151,12 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
         
         return CGSize(width: cellWidth, height: cellHeight)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let card = datasource[indexPath.item]
+        
+        print("card.value: \(card.value as Any) | card.suite: \(card.suit as Any)")
+    }
 }
 
 // MARK: - UILayout

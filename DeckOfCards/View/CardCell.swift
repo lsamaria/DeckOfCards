@@ -85,14 +85,14 @@ extension CardCell {
         
         networkSpinner.startAnimating()
         
-        cardImageView.fetchImage(with: url, and: &task) { (error) in
+        cardImageView.fetchImage(with: url, and: &task) { (urlSessionError) in
             
             DispatchQueue.main.async { [weak self] in
                 self?.networkSpinner.stopAnimating()
             }
             
-            if let error = error {
-                print("\nimage-error-for-\(card.suit ?? "")-: ", error)
+            if let  urlSessionError = urlSessionError {
+                print("\nimage-error-for-\(card.suit ?? "")-: ",  urlSessionError)
             }
         }
     }
